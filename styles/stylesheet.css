@@ -1,24 +1,118 @@
-html, body, h1, h2, h3, section, main, aside, article, p {
+/* Flexbox är det bästa sedan skivat bröd! */
+html, body, h1, h2, h3, section, main, aside, article, p, ul, li {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+ol > li {
+    list-style: decimal
 }
 html {
     font-size: 100%;
+    font-family: sans-serif
 }
-
+body {
+    height: 100h;
+    width: 1024px;
+    margin: 0 auto;
+}
 body > header {
     background-color: blueviolet;
 }
 body > section {
     display: flex;
-}
-main {
     background-color: chartreuse;
 }
+main {
+    background-color: green;
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: stretch;
+
+}
+main > header {
+    background-color: darkolivegreen;
+    flex: 1 100%;
+}
+main > header:first-child {    
+    margin-bottom: 1em;
+    flex: 0 auto;
+}
+main > article {
+    background-color: olive;
+    margin-top: 1em;
+    flex: 1 1 calc(50% - 1em);
+    align-self: flex-start;  
+    padding: 1em;
+    margin-right: 1em;
+}
+
+
 aside {
     background-color: cadetblue;
+    float: right;
+    padding: 1em;
 }
+
+aside > ul > li {
+    color: green;
+}
+aside > ul > li:nth-child(even) {
+    color: yellow;
+}
+
 footer {
     height: 2rem;
     background-color: coral;
+}
+#section-content {
+    padding: 20px;
+}
+#menu {
+    height: 4rem;
+}
+
+#menu h1, #menu li {
+    float: left;
+    display: flex;
+    align-items: center;
+    padding-right: 1em;    
+    height: 100%;
+}
+#menu h1 {
+    padding-left: 0.5em;
+}
+#menu nav {
+    height: inherit;
+}
+#menu ul {
+    height: inherit;
+}
+#menu ul > li {
+    background-color: purple;
+    text-align: center;
+    padding-left: 1em;
+}
+#menu ul > li:nth-child(odd){
+    background-color: rebeccapurple;
+}
+.article-section-main-header {
+    font-size: 2rem;
+}
+
+a:visited {
+    color: yellow;
+}
+
+/* Extra */
+main > article:nth-child(even){
+    background-color: forestgreen;
+    margin-right: 0;
+}
+
+main > article:first-of-type p:nth-of-type(2) {
+    font-weight: bold;
+    color: blue;
 }
